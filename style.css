@@ -18,6 +18,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Header */
 header {
   position: fixed;
   top: 0;
@@ -32,23 +33,33 @@ header {
   background: transparent;
 }
 
-.logo {
-  font-size: 2rem;
-  font-weight: 900;
-  letter-spacing: -2px;
+/* Logo como imagem */
+.logo-link {
+  display: block;
+  line-height: 0;
 }
 
+.logo-img {
+  height: 48px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.logo-img:hover {
+  opacity: 0.8;
+}
+
+/* Menu sempre no canto direito */
 .menu-area {
+  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  height: 100%;
 }
 
 .menu-area .icon {
   font-size: 0.5rem;
   opacity: 0.5;
-  align-self: center;
 }
 
 .menu-btn {
@@ -58,9 +69,9 @@ header {
   font-size: 1.1rem;
   font-weight: 500;
   cursor: pointer;
-  align-self: center;
 }
 
+/* Hero */
 .hero {
   min-height: 100vh;
   padding: 12vh 5% 8vh;
@@ -122,6 +133,7 @@ header {
   max-width: 520px;
 }
 
+/* Clients */
 .clients {
   padding: 6rem 5%;
   text-align: center;
@@ -134,6 +146,7 @@ header {
   margin: 0 auto;
 }
 
+/* Bio & Contact Footer */
 .bio,
 .contact-footer {
   padding: 10rem 5%;
@@ -168,6 +181,7 @@ header {
   opacity: 0.7;
 }
 
+/* Links projetos */
 .client-link {
   color: var(--accent);
   text-decoration: none;
@@ -190,6 +204,7 @@ header {
   opacity: 0.8;
 }
 
+/* Header scrolled */
 header.scrolled {
   background: rgba(15, 15, 15, 0.95);
   backdrop-filter: blur(10px);
@@ -197,14 +212,15 @@ header.scrolled {
   box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
-header.scrolled .logo {
-  font-size: 1.7rem;
+header.scrolled .logo-img {
+  height: 38px;
 }
 
 header.scrolled .menu-btn {
   font-size: 1rem;
 }
 
+/* Overlay Menu */
 .overlay-menu {
   position: fixed;
   inset: 0;
@@ -265,11 +281,6 @@ header.scrolled .menu-btn {
   transition: all 0.6s;
 }
 
-.overlay-menu .menu-link {
-  opacity: 0;
-  transform: translateY(50px);
-}
-
 .overlay-menu.active .menu-link {
   opacity: 1;
   transform: translateY(0);
@@ -286,10 +297,12 @@ header.scrolled .menu-btn {
   transform: scale(1.05);
 }
 
+/* Scroll suave */
 html {
   scroll-behavior: smooth;
 }
 
+/* Responsivo */
 @media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;
